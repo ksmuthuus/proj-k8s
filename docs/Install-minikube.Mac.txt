@@ -1,0 +1,28 @@
+
+1) Check of brew instrall
+which brew
+
+
+2) if brew not installed
+navigate to bres.sh in borwser and run command given there.
+
+3) install kubectl
+brew install kubectl
+
+4) Verify kubectl
+which kubectl
+
+5) Download virtualnox
+Navigate to virtualbox.org and download installer for OSX
+
+6) install minikube
+brew install minikube
+
+7) Verify minikube
+which minikube
+
+8) Run minikube
+minikube start
+
+9)
+
