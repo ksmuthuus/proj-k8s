@@ -1,0 +1,33 @@
+Docker Desktop's Kubernetes instead of Minikube
+These instructions are for using Docker Desktop's built-in Kubernetes instead of minikube which is discussed in the lectures.
+
+Windows Pro / Enterprise
+1. Right click the Docker icon in the Windows Toolbar
+
+2. Click Settings
+
+3. Click "Kubernetes" in the dialog box sidebar (If you don't see Kubernetes listed in the sidebar you may have Windows Containers enabled instead of Linux Containers - you can toggle this setting by right clicking the Docker toolbar icon and clicking "Switch to Linux Containers")
+
+4. Check the “Enable Kubernetes” box
+
+5. Click "Apply"
+
+6. Click Install to allow the cluster installation (This may take a while). If on Windows, you may get a dialog box warning from Windows Defender about Docker's vpnkit. Check the boxes to allow it to communicate on your network and click "Allow Access"
+
+macOS
+1. Click the Docker icon in the top macOS toolbar
+
+2. Click Preferences
+
+3. Click "Kubernetes" in the dialog box menu
+
+4. Check the “Enable Kubernetes” box
+
+5. Click "Apply"
+
+6. Click Install to allow the cluster installation (This may take a while).
+
+Usage
+instead of the IP address when using minikube, use localhost.
+
+For example, 192.168.99.101:31515 instead, when using Docker Desktop's Kubernetes, visit: localhost:31515
