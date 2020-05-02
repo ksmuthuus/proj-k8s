@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: letsencrypt-staging
+  name: ingress-oauth
+  #namespace: kube-system
+spec:
+  tls:
+  - hosts:
+    - auth.fleetman.com
+    secretName: fleetman-tls
+  rules:
+  - host: auth.fleetman.com
+    http:
+      paths:
+        - path: /oauth2
+          backend:
+            serviceName: oauth2-proxy
+            servicePort: 4180

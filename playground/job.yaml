@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job
+  labels:
+    name: py-timer
+spec:
+  template:
+    spec:
+      containers:
+      - name: my-job
+        image: python:rc-slim
+        command: ["python","-c"]
+        args: ["import time; print('starting');time.sleep(10);print('done')"]
+      restartPolicy: Never
+  backoffLimit: 4

@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: my-cronjob
+  labels:
+    name: py-timer
+spec: #Corn Job
+  schedule: "* * * * *"
+  jobTemplate:
+    spec: #Job
+      template:
+        spec: #Pod
+          containers:
+          - name: timer
+            image: python:rc-slim
+            command: ["python","-c"]
+            args: ["import time; print('starting');time.sleep(10);print('done')"]
+          restartPolicy: Never
+      backoffLimit: 4
